@@ -2,6 +2,8 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+const List<String> list = <String>["Regular 87", "Midgrade 89", "Premium 91+"];
+
 void main() {
   runApp(MyApp());
 }
@@ -95,6 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Column(
                   children: [
                     const Center(child: Text("Find cheapest gas station")),
+                    const Center(child: DropdownButtonGasoline()),
                   ],
                 ),
               )
@@ -103,7 +106,12 @@ class _MyHomePageState extends State<MyHomePage> {
               body: Center(
                 child: Column(
                   children: [
-
+                    Center(
+                      child: Text(
+                        "AI Search",
+                        style: TextStyle(color: Colors.black.withValues(alpha: 1))
+                      ), 
+                    )
                   ],
                 ),
               )
@@ -133,5 +141,33 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
     */
+  }
+}
+
+class DropdownButtonGasoline extends StatefulWidget {
+  const DropdownButtonGasoline({super.key});
+
+  State<DropdownButtonGasoline> createState() => _DropdownButtonGasoline();
+}
+
+class _DropdownButtonGasoline extends State<DropdownButtonGasoline> {
+  String dropdownValue = list.first;
+
+  Widget build(BuildContext context) {
+    return DropdownButton(
+      value: dropdownValue,
+      icon: const Icon(Icons.arrow_downward),
+      elevation: 16,
+      style: const TextStyle(color: Colors.deepPurple),
+      underline: Container(height: 2, color: Colors.deepOrange),
+      onChanged: (String? value) {
+        setState(() {
+          dropdownValue = value!;
+        });
+      },
+      items: list.map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(value: value, child: Text(value));
+      }).toList(),
+    );
   }
 }
