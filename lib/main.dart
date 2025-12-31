@@ -91,8 +91,22 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Scaffold(
+              body: Center(
+                child: Column(
+                  children: [
+                    const Center(child: Text("Find cheapest gas station")),
+                  ],
+                ),
+              )
             ),
             Scaffold(
+              body: Center(
+                child: Column(
+                  children: [
+
+                  ],
+                ),
+              )
             ),
           ],
         ),
