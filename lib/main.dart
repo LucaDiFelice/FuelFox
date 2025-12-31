@@ -109,8 +109,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     Center(
                       child: Text(
                         "AI Search",
-                        style: TextStyle(color: Colors.black.withValues(alpha: 1))
-                      ), 
+                        style: TextStyle(
+                          color: Colors.black.withValues(alpha: 1),
+                          fontSize: 20,
+                        )
+                      ),
+                       
                     )
                   ],
                 ),
