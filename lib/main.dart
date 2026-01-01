@@ -48,7 +48,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void clickButton() {
     print("button clicked");
-    setState(() => isVisibleFP = !isVisibleFP);
   }
 
   void clickSecondButton() {
@@ -95,10 +94,19 @@ class _MyHomePageState extends State<MyHomePage> {
             Scaffold(
               body: Center(
                 child: Column(
+                  spacing: 10,
                   children: [
-                    const Center(child: Text("Find cheapest gas station")),
+                    const Center(
+                      child: Text("Find cheapest gas station")
+                    ),
                     const Center(
                       child: DropdownButtonGasoline(),
+                    ),
+                    Center(
+                      child: ElevatedButton(
+                        onPressed: clickButton,
+                        child: Text("Diesel")
+                      )
                     ),
                   ],
                 ),
@@ -107,13 +115,14 @@ class _MyHomePageState extends State<MyHomePage> {
             Scaffold(
               body: Center(
                 child: Column(
+                  spacing: 10,
                   children: [
                     Center(
                       child: Text(
                         "AI car search",
                         style: TextStyle(
                           color: Colors.black.withValues(alpha: 1),
-                          fontSize: 20,             
+                          fontSize: 20,
                         )
                       ), 
                     ),
@@ -123,6 +132,21 @@ class _MyHomePageState extends State<MyHomePage> {
                         hintText: "Car model",
                       )
                     ),
+                    Center(
+                      child: ElevatedButton(
+                        onPressed: clickButton, 
+                        child: Text("Search")
+                      )
+                    ),
+                    Center(
+                      child: Text(
+                        "Manual input",
+                        style: TextStyle(
+                          color: Colors.black.withValues(alpha: 1),
+                          fontSize: 20,
+                        )
+                      )
+                    )
                   ],
                 ),
               )
