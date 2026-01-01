@@ -97,7 +97,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Column(
                   children: [
                     const Center(child: Text("Find cheapest gas station")),
-                    const Center(child: DropdownButtonGasoline()),
+                    const Center(
+                      child: DropdownButtonGasoline(),
+                    ),
                   ],
                 ),
               )
@@ -108,14 +110,19 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     Center(
                       child: Text(
-                        "AI Search",
+                        "AI car search",
                         style: TextStyle(
                           color: Colors.black.withValues(alpha: 1),
-                          fontSize: 20,
+                          fontSize: 20,             
                         )
-                      ),
-                       
-                    )
+                      ), 
+                    ),
+                    Center(
+                      child: SearchBar(
+                        leading: const Icon(Icons.search),
+                        hintText: "Car model",
+                      )
+                    ),
                   ],
                 ),
               )
