@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Scaffold(
               body: Center(
                 child: Column(
-                  spacing: 10,
+                  spacing: 20,
                   children: [
                     const Center(
                       child: Text("Find cheapest gas station")
@@ -106,6 +106,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: ElevatedButton(
                         onPressed: clickButton,
                         child: Text("Diesel")
+                      )
+                    ),
+                    Center(
+                      child: ElevatedButton(
+                        onPressed: clickButton, 
+                        child: Text("Eletricity"),
                       )
                     ),
                   ],
@@ -182,12 +188,14 @@ class _MyHomePageState extends State<MyHomePage> {
 class DropdownButtonGasoline extends StatefulWidget {
   const DropdownButtonGasoline({super.key});
 
+  @override
   State<DropdownButtonGasoline> createState() => _DropdownButtonGasoline();
 }
 
 class _DropdownButtonGasoline extends State<DropdownButtonGasoline> {
   String dropdownValue = list.first;
 
+  @override
   Widget build(BuildContext context) {
     return DropdownButton(
       value: dropdownValue,
