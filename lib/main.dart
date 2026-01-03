@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Scaffold(
               body: Center(
                 child: Column(
-                  spacing: 20,
+                  spacing: 100,
                   children: [
                     const Center(
                       child: Text("Find cheapest gas station")
@@ -103,15 +103,33 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: DropdownButtonGasoline(),
                     ),
                     Center(
-                      child: ElevatedButton(
-                        onPressed: clickButton,
-                        child: Text("Diesel")
-                      )
+                      child: SizedBox(
+                        width: 200,
+                        height: 60,
+                        child: ElevatedButton(
+                          onPressed: clickButton,
+                          child: const Text(
+                            "Diesel",
+                            style: TextStyle(
+                              fontSize: 25.0
+                            )
+                          )
+                        )
+                      ),
                     ),
                     Center(
-                      child: ElevatedButton(
-                        onPressed: clickButton, 
-                        child: Text("Eletricity"),
+                      child: SizedBox(
+                        width: 200,
+                        height: 60,
+                        child: ElevatedButton(
+                          onPressed: clickButton, 
+                          child: const Text(
+                            "Electricity",
+                            style: TextStyle(
+                              fontSize: 25.0
+                            ),
+                          )
+                        ),
                       )
                     ),
                   ],
